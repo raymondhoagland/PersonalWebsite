@@ -14,4 +14,4 @@ mkdir /home/ubuntu/packer
 cd /home/ubuntu/packer
 wget https://releases.hashicorp.com/packer/0.11.0/packer_0.11.0_linux_amd64.zip
 unzip *.zip
-echo "export PATH=$PATH:/home/ubuntu/packer" >> ~/.bashrc
+mv /home/ubuntu/packer/packer /usr/bin

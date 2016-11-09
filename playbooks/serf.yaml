@@ -1,0 +1,17 @@
+---
+- name: Install serf
+  hosts: localhost
+
+  tasks:
+  - name: Make serf folder
+    shell: mkdir /home/ubuntu/serf
+  - name: Download serf binary
+    shell: wget https://releases.hashicorp.com/serf/0.8.0/serf_0.8.0_linux_amd64.zip
+    args:
+      chdir: /home/ubuntu/serf
+  - name: Unzip serf binary
+    shell: unzip *.zip
+    args:
+      chdir: /home/ubuntu/serf
+  - name: Link serf binary
+    shell: mv /home/ubuntu/serf/serf /usr/bin
