@@ -4,7 +4,7 @@
 
   tasks:
   - name: Make serf folder
-    shell: mkdir /home/ubuntu/serf
+    shell: mkdir -p /home/ubuntu/serf
   - name: Download serf binary
     shell: wget https://releases.hashicorp.com/serf/0.8.0/serf_0.8.0_linux_amd64.zip
     args:

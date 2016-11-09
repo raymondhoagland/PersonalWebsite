@@ -1,0 +1,21 @@
+---
+- name: Install haproxy
+  hosts: localhost
+
+  tasks:
+  - name: Install make and gcc
+    shell: apt-get -y install make gcc
+  - name: Make haproxy folder
+    shell: mkdir -p /home/ubuntu/haproxy
+  - name: Download haproxy binary
+    shell: wget http://www.haproxy.org/download/1.6/src/haproxy-1.6.9.tar.gz
+    args:
+      chdir: "/home/ubuntu/haproxy"
+  - name: Unzip haproxy binary
+    shell: tar -xzvf *.tar.gz
+    args:
+      chdir: "/home/ubuntu/haproxy"
+  - name: Link haproxy
+    shell: make && make install
+    args:
+      chdir: "/home/ubuntu/haproxy"

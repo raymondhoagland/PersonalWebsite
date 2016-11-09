@@ -1,0 +1,22 @@
+{
+    "builders": [
+        {
+            "type": "docker",
+            "image": "rjh/serf_base",
+            "commit": "true"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "ansible-local",
+            "script": "../playbooks/haproxy.yaml"
+        }
+    ],
+    "post-processors": [
+        {
+            "type": "docker-tag",
+            "repository": "rjh/haproxy",
+            "tag": "0.1"
+        }
+    ]
+}
