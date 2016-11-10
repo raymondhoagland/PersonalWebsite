@@ -20,7 +20,7 @@
         {
             "type": "docker-tag",
             "repository": "rjh/serf_base",
-            "tag": "0.1"
+            "tag": "latest"
         }
     ]
 }

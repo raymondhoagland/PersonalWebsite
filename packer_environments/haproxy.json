@@ -3,7 +3,7 @@
         {
             "type": "docker",
             "image": "rjh/serf_base",
-            "commit": "true"
+            "commit": true
         }
     ],
     "provisioners": [
@@ -16,7 +16,7 @@
         {
             "type": "docker-tag",
             "repository": "rjh/haproxy",
-            "tag": "0.1"
+            "tag": "latest"
         }
     ]
 }
