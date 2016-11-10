@@ -25,8 +25,10 @@
       dest: /home/ubuntu/haproxy
   - name: Make haproxy
     make:
-      chdir: /home/ubuntu/haproxy
+      params:
+        TARGET: generic
+      chdir: /home/ubuntu/haproxy/haproxy-1.6.9
   - name: Install haproxy
-    make:
-      chdir: /home/ubuntu/haproxy
-      target: install
+    shell: make install
+    args:
+      chdir: /home/ubuntu/haproxy/haproxy-1.6.9

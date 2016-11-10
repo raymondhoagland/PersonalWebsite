@@ -10,13 +10,13 @@
     "provisioners": [
         {
             "type": "ansible-local",
-            "playbook_file": "../playbooks/haproxy.yaml"
+            "playbook_file": "../playbooks/react.yaml"
         }
     ],
     "post-processors": [
         {
             "type": "docker-tag",
-            "repository": "rjh/haproxy",
+            "repository": "rjh/web_server",
             "tag": "latest"
         }
     ]
