@@ -15,7 +15,7 @@
         },
         {
             "type": "ansible-local",
-            "playbook_file": "../playbook_file/npm.yaml"
+            "playbook_file": "../playbooks/npm.yaml"
         },
         {
             "type": "ansible-local",
