@@ -1,5 +1,5 @@
 ---
-- name: Install reactjs
+- name: Copy sourcecode
   hosts: localhost
 
   tasks:
@@ -7,6 +7,10 @@
     file:
       path: /home/ubuntu/web_server
       state: directory
+  - name: Move package.json
+    copy:
+      src: /tmp/package.json
+      dest: /home/ubuntu/web_server/
   - name: Make routes folder
     file:
       path: /home/ubuntu/web_server/routes
@@ -23,3 +27,7 @@
     copy:
       src: /tmp/hello.njk
       dest: /home/ubuntu/web_server/views/hello.njk
+  - name: Move webserver code
+    copy:
+      src: /tmp/express_server.js
+      dest: /home/ubuntu/web_server/app.js

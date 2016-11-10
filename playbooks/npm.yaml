@@ -11,3 +11,8 @@
     apt:
       name: npm
       state: present
+  - name: Install npm dependencies
+    npm:
+      path: /home/ubuntu/web_server
+  - name: Link nodejs as node
+    shell: ln -s /usr/bin/nodejs /usr/bin/node
