@@ -19,17 +19,19 @@
       global: yes
       state: present
       path: /home/ubuntu/web_server
-  - name: Install express
-    npm:
-      name: express
-      global: yes
-      state: present
-      path: /home/ubuntu/web_server
+  - name: Make routes folder
+    file:
+      path: /home/ubuntu/web_server/routes
+      state: directory
   - name: Move webserver code
     copy:
       src: /tmp/hello_world.js
       dest: /home/ubuntu/web_server/routes/hello_world.js
+  - name: Make views folder
+    file:
+      path: /home/ubuntu/web_server/views
+      state: directory
   - name: Copy HTML
     copy:
-      src: /tmp/hello.html
-      dest: /home/ubuntu/web_server/views/hello.html
+      src: /tmp/hello.njk
+      dest: /home/ubuntu/web_server/views/hello.njk
