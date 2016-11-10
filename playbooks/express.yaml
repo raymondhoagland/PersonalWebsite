@@ -1,0 +1,15 @@
+---
+- name: Install express
+  hosts: localhost
+
+  tasks:
+  - name: Install expressjs
+    npm:
+      name: express
+      global: yes
+      state: present
+      path: /home/ubuntu/web_server
+  - name: Move webserver code
+    copy:
+      src: /tmp/express_server.js
+      dest: /home/ubuntu/web_server/app.js

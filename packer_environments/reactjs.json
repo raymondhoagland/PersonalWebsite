@@ -9,8 +9,21 @@
     ],
     "provisioners": [
         {
+            "type": "file",
+            "source": "../web_server/",
+            "destination": "/tmp/"
+        },
+        {
+            "type": "ansible-local",
+            "playbook_file": "../playbook_file/npm.yaml"
+        },
+        {
             "type": "ansible-local",
             "playbook_file": "../playbooks/react.yaml"
+        },
+        {
+            "type": "ansible-local",
+            "playbook_file": "../playbooks/express.yaml"
         }
     ],
     "post-processors": [

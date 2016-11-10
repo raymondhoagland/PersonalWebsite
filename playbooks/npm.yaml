@@ -1,0 +1,13 @@
+---
+- name: Install node/npm
+  hosts: localhost
+
+  tasks:
+  - name: Install node
+    apt:
+      name: nodejs
+      state: present
+  - name: Install npm
+    apt:
+      name: npm
+      state: present
