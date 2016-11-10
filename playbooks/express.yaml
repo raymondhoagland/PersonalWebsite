@@ -1,11 +1,17 @@
 ---
-- name: Install express
+- name: Install express/harp/nunjucks
   hosts: localhost
 
   tasks:
   - name: Install expressjs
     npm:
       name: express
+      global: yes
+      state: present
+      path: /home/ubuntu/web_server
+  - name: Install nunjucks
+    npm:
+      name: nunjucks
       global: yes
       state: present
       path: /home/ubuntu/web_server
