@@ -1,9 +1,0 @@
----
-- name: Install express/harp/nunjucks
-  hosts: localhost
-
-  tasks:
-  - name: Move webserver code
-    copy:
-      src: /tmp/express_server.js
-      dest: /home/ubuntu/web_server/app.js
